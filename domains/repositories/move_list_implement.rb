@@ -13,7 +13,7 @@ class MoveListImplement
   private
 
   def self.character_move_rows(arg_character_name)
-    File.open('tmp/move', 'r:UTF-8').select do |move|
+    File.open('datastore/move', 'r:UTF-8').select do |move|
       move.split(',')[1] == arg_character_name
     end
   end

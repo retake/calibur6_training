@@ -1,15 +1,14 @@
-require './domains/character'
-require './domains/move_list'
-require './domains/move'
-require './domains/combo'
-require './repositories/character_implement'
-require './repositories/move_list_implement'
-require './repositories/combo_list_implement'
+require './domains/entities/character/character'
+require './domains/entities/character/move'
+require './domains/entities/character/combo'
+require './domains/repositories/character_implement'
+require './domains/repositories/move_list_implement'
+require './domains/repositories/combo_list_implement'
 
 
+# TODO: characterを集約ルートにするため、エンティティ内の永続データのオブジェクト化は、全てここで行っている
 class CharacterEntityFactory
 
-  # TODO: characterを集約ルートにするため、エンティティ内の永続データのオブジェクト化は、全てここで行っている
   def self.build_character_entity(arg_character_name)
     id, name, sex = CharacterImplement.find_by_name(arg_character_name)
     move_list = MoveListImplement.select_by_character_name(name).collect { |move| Move.new(move) }

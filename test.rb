@@ -1,4 +1,4 @@
-require './factories/character_entity_factory'
+require './domains/factories/character_entity_factory'
 
 mina = CharacterEntityFactory.build_character_entity('mina')
 taki = CharacterEntityFactory.build_character_entity('taki')

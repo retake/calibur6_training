@@ -13,7 +13,7 @@ class ComboListImplement
   private
 
   def self.character_combo_rows(arg_character_name)
-    File.open('tmp/combo', 'r:UTF-8').select do |move|
+    File.open('datastore/combo', 'r:UTF-8').select do |move|
       move.split(',')[1] == arg_character_name
     end
   end
